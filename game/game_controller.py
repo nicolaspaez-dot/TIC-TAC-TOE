@@ -5,21 +5,14 @@ from game.board import Board
 from ui.console_ui import ConsoleUI
 
 class GameController:
-    """Controla el flujo del juego: turnos, detección de victoria, renderizado."""
     
     def __init__(self, history_manager):
         self.history_manager = history_manager
         self.ui = ConsoleUI()
     
     def jugar_partida(self, nombre_x, nombre_o, bot_x, bot_o):
-        """Ejecuta una partida completa.
         
-        Args:
-            nombre_x: Nombre del jugador X
-            nombre_o: Nombre del jugador O
-            bot_x: Bot para X (None si es humano)
-            bot_o: Bot para O (None si es humano)
-        """
+
         nombres = {"X": nombre_x, "O": nombre_o}
         tablero = Board()
         ficha_actual = "X"

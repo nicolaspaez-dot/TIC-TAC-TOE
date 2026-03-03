@@ -2,19 +2,19 @@ from datetime import datetime
 from colorama import Fore, Style
 
 class HistoryManager:
-    """Maneja el guardado, lectura y borrado del historial de partidas."""
+
     
     def __init__(self, filename="historial.txt"):
         self.filename = filename
     
     def guardar(self, resultado):
-        """Guarda un resultado en el historial."""
+
         fecha = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         with open(self.filename, "a") as archivo:
             archivo.write(f"[{fecha}] {resultado}\n")
     
     def mostrar(self):
-        """Muestra el historial de partidas."""
+
         try:
             with open(self.filename, "r") as archivo:
                 print(f"\n{Fore.CYAN}--- HISTORIAL DE PARTIDAS ---{Style.RESET_ALL}")
@@ -28,12 +28,12 @@ class HistoryManager:
             print("\nEl historial aún no existe.")
     
     def borrar(self):
-        """Borra todo el historial."""
+
         open(self.filename, "w").close()
         print(f"\n{Fore.YELLOW}Historial borrado.{Style.RESET_ALL}")
     
     def mostrar_estadisticas(self):
-        """Muestra estadísticas calculadas del historial."""
+
         try:
             with open(self.filename, "r") as archivo:
                 lineas = archivo.readlines()

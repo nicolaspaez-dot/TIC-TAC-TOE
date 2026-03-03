@@ -6,6 +6,7 @@ from utils.history_manager import HistoryManager
 from ui.menu import MenuManager
 from game.game_controller import GameController
 
+
 def main():
    
     history = HistoryManager("historial.txt")
